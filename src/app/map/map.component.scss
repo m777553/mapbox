@@ -1,0 +1,39 @@
+.map {
+  height: 100vh;
+  width: 100vw;
+}
+
+.map__toolbar {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+}
+
+.map__btn {
+  width: 25px;
+  height: 25px;
+  background-size: contain;
+
+  &--draw {
+    background: url('./assets/imgs/draw-icon.svg') no-repeat center;
+    background-size: contain;
+  }
+
+  &--edit {
+    background: url('./assets/imgs/edit-icon.svg') no-repeat center;
+    background-size: contain;
+  }
+
+  &--select {
+    background: url('./assets/imgs/select-icon.svg') no-repeat center;
+    background-size: contain;
+  }
+
+  &--delete {
+    background: url('./assets/imgs/delete-icon.svg') no-repeat center;
+    background-size: contain;
+  }
+}

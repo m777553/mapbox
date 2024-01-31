@@ -1,0 +1,7 @@
+<div class="map" id="map"></div>
+<div class="map__toolbar">
+  <button  class="map__btn map__btn--draw" (click)="changeMode(MAP_MODE.DRAW_POLYGON)">Draw Polygon</button>
+  <button class="map__btn map__btn--edit"  (click)="changeMode(MAP_MODE.DIRECT_SELECT)">Edit Points</button>
+  <button class="map__btn map__btn--select"  (click)="changeMode(MAP_MODE.SIMPLE_SELECT)">Select</button>
+  <button class="map__btn map__btn--delete"  (click)="changeMode(MAP_MODE.TRASH)">Delete</button>
+</div>
