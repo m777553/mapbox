@@ -1,7 +1,18 @@
 <div class="map" id="map"></div>
 <div class="map__toolbar">
-  <button  class="map__btn map__btn--draw" (click)="changeMode(MAP_MODE.DRAW_POLYGON)">Draw Polygon</button>
-  <button class="map__btn map__btn--edit"  (click)="changeMode(MAP_MODE.DIRECT_SELECT)">Edit Points</button>
-  <button class="map__btn map__btn--select"  (click)="changeMode(MAP_MODE.SIMPLE_SELECT)">Select</button>
-  <button class="map__btn map__btn--delete"  (click)="changeMode(MAP_MODE.TRASH)">Delete</button>
+  <button  class="map__btn map__btn--draw" (click)="changeMode(MAP_MODE.DRAW_POLYGON)">
+    <span class="tooltip">Draw Polygon</span>
+  </button>
+  <button class="map__btn map__btn--edit"  (click)="changeMode(MAP_MODE.DIRECT_SELECT)">
+    <span class="tooltip">Edit Points</span>
+  </button>
+  <button class="map__btn map__btn--select"  (click)="changeMode(MAP_MODE.SIMPLE_SELECT)">
+    <span class="tooltip">Select</span>
+  </button>
+  <button class="map__btn map__btn--delete"  (click)="changeMode(MAP_MODE.TRASH)">
+    <span class="tooltip">Delete</span>
+  </button>
+  <button class="map__btn map__btn--extrude"  (click)="changeExtrudeHeight()">
+    <span class="tooltip">Change Extrude Height</span>
+  </button>
 </div>

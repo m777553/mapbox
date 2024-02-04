@@ -33,8 +33,21 @@ export class MapComponent implements OnInit {
     this.map.addControl(this.draw);
   }
 
-  changeMode(mode: MAP_MODE) {
+  changeMode(mode: string) {
     this.draw?.changeMode(mode);
+  }
+  changeExtrudeHeight() {
+    const newHeight = prompt("Enter new extrude height:");
+    if (newHeight) {
+      // Здесь вы можете добавить код для применения новой высоты к полигону
+      // Например, если у вас есть метод setExtrudeHeight в вашем сервисе mapService
+      this.setExtrudeHeight(+newHeight);
+    }
+  }
+  setExtrudeHeight(newHeight: number) {
+    if (this.map && this.map.getLayer('extrusion-layer')) {
+      this.map.setPaintProperty('extrusion-layer', 'fill-extrusion-height', newHeight);
+    }
   }
 
   protected readonly MAP_MODE = MAP_MODE;

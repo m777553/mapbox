@@ -5,35 +5,64 @@
 
 .map__toolbar {
   position: fixed;
-  right: 0;
+  left: 0;
   top: 50%;
   transform: translateY(-50%);
   display: flex;
   flex-direction: column;
+  padding: 10px;
 }
 
 .map__btn {
   width: 25px;
   height: 25px;
   background-size: contain;
+  border: 0;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  padding: 5px;
+  cursor: pointer;
+  background: #fafafa no-repeat center;
+  background-size: 50%;
+  position: relative;
+
 
   &--draw {
-    background: url('./assets/imgs/draw-icon.svg') no-repeat center;
-    background-size: contain;
+    background-image: url('../../assets/imgs/draw-icon.svg');
   }
 
   &--edit {
-    background: url('./assets/imgs/edit-icon.svg') no-repeat center;
-    background-size: contain;
+    background-image: url('../../assets/imgs/edit-icon.svg');
   }
 
   &--select {
-    background: url('./assets/imgs/select-icon.svg') no-repeat center;
-    background-size: contain;
+    background-image: url('../../assets/imgs/select-icon.svg');
   }
 
   &--delete {
-    background: url('./assets/imgs/delete-icon.svg') no-repeat center;
-    background-size: contain;
+    background-image: url('../../assets/imgs/delete-icon.svg');
   }
+  &--extrude {
+  background-image: url('../../assets/imgs/extrude-icon.svg');
+}
+}
+.tooltip {
+  visibility: hidden;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  padding: 5px;
+  border-radius: 6px;
+  position: absolute;
+  z-index: 1;
+  bottom: 50%;
+  right: 25%;
+  margin-right: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.map__btn:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
 }
