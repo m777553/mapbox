@@ -1,15 +1,25 @@
 <div class="map" id="map"></div>
+<div class="map__mode">
+
+  <div class="map__mode">
+    <select [(ngModel)]="selectedMode" (change)="changeMode(selectedMode)">
+      <option [value]="MAP_MODE.SIMPLE">Mode 1</option>
+      <option [value]="MAP_MODE.NATURAL">Mode 2</option>
+    </select>
+  </div>
+</div>
+
 <div class="map__toolbar">
-  <button  class="map__btn map__btn--draw" (click)="changeMode(MAP_MODE.DRAW_POLYGON)">
+  <button  class="map__btn map__btn--draw" (click)="useAction(MAP_ACTION.DRAW_POLYGON)">
     <span class="tooltip">Draw Polygon</span>
   </button>
-  <button class="map__btn map__btn--edit"  (click)="changeMode(MAP_MODE.DIRECT_SELECT)">
+  <button class="map__btn map__btn--edit"  (click)="useAction(MAP_ACTION.DIRECT_SELECT)">
     <span class="tooltip">Edit Points</span>
   </button>
-  <button class="map__btn map__btn--select"  (click)="changeMode(MAP_MODE.SIMPLE_SELECT)">
+  <button class="map__btn map__btn--select"  (click)="useAction(MAP_ACTION.SIMPLE_SELECT)">
     <span class="tooltip">Select</span>
   </button>
-  <button class="map__btn map__btn--delete"  (click)="changeMode(MAP_MODE.TRASH)">
+  <button class="map__btn map__btn--delete"  (click)="useAction(MAP_ACTION.TRASH)">
     <span class="tooltip">Delete</span>
   </button>
   <button class="map__btn map__btn--extrude"  (click)="changeExtrudeHeight()">

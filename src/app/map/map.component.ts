@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as mapboxgl from 'mapbox-gl';
 import MapboxDraw from '@mapbox/mapbox-gl-draw';
-import { MAP_MODE } from './map.model';
+import { MAP_ACTION, MAP_MODE } from './map.model';
 
 @Component({
   selector: 'app-map',
@@ -11,6 +11,10 @@ import { MAP_MODE } from './map.model';
 export class MapComponent implements OnInit {
   map?: mapboxgl.Map;
   draw?: MapboxDraw;
+
+  MAP_ACTION = MAP_ACTION;
+  MAP_MODE = MAP_MODE;
+  selectedMode = this.MAP_MODE.SIMPLE;
 
   ngOnInit() {
     this.map = new mapboxgl.Map({
@@ -33,8 +37,21 @@ export class MapComponent implements OnInit {
     this.map.addControl(this.draw);
   }
 
-  changeMode(mode: string) {
+  useAction(mode: string) {
     this.draw?.changeMode(mode);
+  }
+  changeMode(mode: any) {
+    console.log(mode);
+    switch (mode) {
+      case MAP_MODE.NATURAL:
+        this.map?.setStyle('mapbox://styles/mapbox/outdoors-v11');
+
+        break;
+      case MAP_MODE.SIMPLE:
+        this.map?.setStyle('mapbox://styles/mapbox/satellite-streets-v11');
+        break;
+      // Добавьте другие режимы по мере необходимости
+    }
   }
   changeExtrudeHeight() {
     const newHeight = prompt("Enter new extrude height:");
@@ -49,6 +66,4 @@ export class MapComponent implements OnInit {
       this.map.setPaintProperty('extrusion-layer', 'fill-extrusion-height', newHeight);
     }
   }
-
-  protected readonly MAP_MODE = MAP_MODE;
 }

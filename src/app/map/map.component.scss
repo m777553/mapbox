@@ -3,7 +3,7 @@
   width: 100vw;
 }
 
-.map__toolbar {
+.map__toolbar, .map__mode {
   position: fixed;
   left: 0;
   top: 50%;
@@ -11,6 +11,9 @@
   display: flex;
   flex-direction: column;
   padding: 10px;
+}
+.map__mode {
+  top: 5%;
 }
 
 .map__btn {
