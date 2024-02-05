@@ -35,20 +35,23 @@ export class MapComponent implements OnInit {
     });
 
     this.map.addControl(this.draw);
+    this.selectedMode = this.MAP_MODE.DEFAULT;
   }
 
   useAction(mode: string) {
     this.draw?.changeMode(mode);
   }
   changeMode(mode: any) {
-    console.log(mode);
     switch (mode) {
+      case MAP_MODE.DEFAULT:
+        this.map?.setStyle('mapbox://styles/mapbox/streets-v11');
+        break;
       case MAP_MODE.NATURAL:
-        this.map?.setStyle('mapbox://styles/mapbox/outdoors-v11');
+        this.map?.setStyle('mapbox://styles/mapbox/satellite-streets-v11');
 
         break;
       case MAP_MODE.SIMPLE:
-        this.map?.setStyle('mapbox://styles/mapbox/satellite-streets-v11');
+        this.map?.setStyle('mapbox://styles/mapbox/outdoors-v11');
         break;
       // Добавьте другие режимы по мере необходимости
     }

@@ -4,7 +4,9 @@ export enum MAP_ACTION {
   SIMPLE_SELECT = 'simple_select',
   TRASH = 'trash'
 }
+
 export enum MAP_MODE {
   SIMPLE = 'simple',
-  NATURAL= 'natural'
+  NATURAL = 'natural',
+  DEFAULT = 'default'
 }
