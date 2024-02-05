@@ -1,5 +1,6 @@
 <div class="map" id="map"></div>
 
+<!-- Mode Selection -->
 <div class="map__mode">
   <select class="map__select" [(ngModel)]="selectedMode" (change)="changeMode(selectedMode)">
     <option [value]="MAP_MODE.DEFAULT">Default mode</option>
@@ -8,19 +9,24 @@
   </select>
 </div>
 
+<!-- Toolbar -->
 <div class="map__toolbar">
   <button class="map__btn map__btn--draw" (click)="useAction(MAP_ACTION.DRAW_POLYGON)">
     <span class="tooltip">Draw Polygon</span>
   </button>
+
   <button class="map__btn map__btn--edit" (click)="useAction(MAP_ACTION.DIRECT_SELECT)">
     <span class="tooltip">Edit Points</span>
   </button>
+
   <button class="map__btn map__btn--select" (click)="useAction(MAP_ACTION.SIMPLE_SELECT)">
     <span class="tooltip">Select</span>
   </button>
+
   <button class="map__btn map__btn--delete" (click)="useAction(MAP_ACTION.TRASH)">
     <span class="tooltip">Delete</span>
   </button>
+
   <button class="map__btn map__btn--extrude" (click)="changeExtrudeHeight()">
     <span class="tooltip">Change Extrude Height</span>
   </button>
